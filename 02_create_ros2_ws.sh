@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pip install --user -U empy==3.3.4 pyros-genmsg setuptools
+pip install --user -U empy==3.3.4 pyros-genmsg
 pip install setuptools==58.2.0
 
 # Set the name of the workspace
