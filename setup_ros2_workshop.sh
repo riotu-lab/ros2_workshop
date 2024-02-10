@@ -5,6 +5,7 @@ set -e
 
 # Define workspace name
 WORKSPACE_NAME=ros2_ws
+echo "installing gcc and g++"
 sudo apt-get update
 sudo apt install gcc g++
 sudo apt-get install gcc-arm-none-eabi
@@ -14,12 +15,27 @@ pip install setuptools==58.2.0
 echo "Cloning PX4 Autopilot..."
 #git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 echo "Installing PX4 dependencies..."
-#bash ./PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
+#bash ./PX4-Autopilot/Tools/setup/ubuntu.sh 
+echo "make sure to remove files not compatible with unbuntu.sh with ARM64 architecture."
 echo "PX4 Autopilot installation completed. Please restart your computer before continuing."
 
-echo "installing gcc and g++"
+# Step 1: Clean the repository and submodules
+echo "Cleaning repository and submodules..."
+make submodulesclean
+make clean
+make distclean
 
+# Step 2: Checkout to specific version
+echo "Checking out to version v1.14.0..."
+git checkout v1.14.0
 
+# Step 3: Clean the repository and submodules again
+echo "Performing a second round of cleaning after checkout..."
+make submodulesclean
+make clean
+make distclean
+
+echo "Repository is now at version v1.14.0 and cleaned."
 
 cd ~/PX4-Autopilot
 git submodule update --init --recursive
