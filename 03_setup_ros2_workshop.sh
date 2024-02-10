@@ -5,17 +5,13 @@ set -e
 
 # Define workspace name
 WORKSPACE_NAME=ros2_ws
-echo "installing gcc and g++"
-sudo apt-get update
-sudo apt install gcc g++
-sudo apt-get install gcc-arm-none-eabi
 pip install setuptools==58.2.0
 
 # PX4 Autopilot Installation
 echo "Cloning PX4 Autopilot..."
-#git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 echo "Installing PX4 dependencies..."
-#bash ./PX4-Autopilot/Tools/setup/ubuntu.sh 
+bash ./PX4-Autopilot/Tools/setup/ubuntu.sh 
 echo "make sure to remove files not compatible with unbuntu.sh with ARM64 architecture."
 echo "PX4 Autopilot installation completed. Please restart your computer before continuing."
 
@@ -49,18 +45,17 @@ pip3 install --user -U empy==3.3.4 pyros-genmsg setuptools kconfiglib jsonschema
 
 # Micro XRCE-DDS Agent Installation
 echo "Cloning and building Micro XRCE-DDS Agent..."
-#git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
-#cd Micro-XRCE-DDS-Agent
-#mkdir build && cd build
-#cmake ..
-#make
-#sudo make install
-#sudo ldconfig /usr/local/lib/
-#cd ../..
+git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+cd Micro-XRCE-DDS-Agent
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+sudo ldconfig /usr/local/lib/
+cd ../..
 
 # Workspace setup
 echo "Setting up the ROS2 workspace..."
-mkdir -p ~/$WORKSPACE_NAME/src
 cd ~/$WORKSPACE_NAME
 
 #pip3 uninstall em
