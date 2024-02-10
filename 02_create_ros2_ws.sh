@@ -21,14 +21,17 @@ echo "Creating ROS2 workspace in $DIRECTORY"
 mkdir -p $DIRECTORY/src
 
 # Navigate into the workspace directory
-cd $DIRECTORY
+cd $DIRECTORY/src
 
 # Initialize the workspace
 echo "Initializing the workspace"
-ros2 pkg create --build-type ament_cmake --node-name my_node my_package
+#ros2 pkg create --build-type ament_cmake --node-name test_node test_package_cpp
+#ros2 pkg create --build-type ament_python --node-name test_node test_package_python
+
 
 # Build the workspace
 echo "Building the workspace"
+cd $DIRECTORY
 colcon build --symlink-install
 
 echo "ROS2 workspace $WORKSPACE_NAME created and built successfully."

@@ -11,12 +11,13 @@ echo "ROS 2 environment variables set."
 
 # Install Gazebo Simulator
 echo "Installing Gazebo Simulator..."
-sudo apt update && sudo apt upgrade -y
-sudo add-apt-repository universe
-sudo apt update
+#sudo apt update && sudo apt upgrade -y
+#sudo add-apt-repository universe
+#sudo apt update
 
 #sudo apt install -y gazebo11
-sudo apt install -y ros-humble-gazebo-ros-pkgs
+#sudo apt remove gz-tools2
+#sudo apt install -y ros-humble-gazebo-ros-pkgs
 echo "Gazebo installed."
 
 # Install ROS 2 Dependent Packages

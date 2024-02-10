@@ -13,6 +13,13 @@ CHOOSE_ROS_DISTRO=humble
 INSTALL_PACKAGE=desktop
 TARGET_OS=jammy
 
+sudo apt update
+sudo apt install python-is-python3
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+
 # Check OS version
 if ! which lsb_release > /dev/null ; then
 	sudo apt-get update
@@ -76,4 +83,4 @@ source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash
 
 echo "success installing ROS2 $CHOOSE_ROS_DISTRO"
 echo "Run 'source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash'"
-echo "source source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash" >> ~/.bashrc
