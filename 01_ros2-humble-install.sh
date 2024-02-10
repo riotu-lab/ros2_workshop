@@ -18,6 +18,7 @@ sudo apt install python-is-python3
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
+sudo apt install net-tools
 
 
 # Check OS version

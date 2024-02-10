@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install ros-humble-mavros
+sudo /opt/ros/humble/lib/mavros/install_geographiclib_datasets.sh
 # Change directory to ros2_ws/src 
 cd ~/ros2_ws/src
 
