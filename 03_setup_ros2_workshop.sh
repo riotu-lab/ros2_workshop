@@ -33,9 +33,9 @@ make distclean
 
 echo "Repository is now at version v1.14.0 and cleaned."
 
-cd ~/PX4-Autopilot
-git submodule update --init --recursive
-make px4_sitl jmavsim
+#cd ~/PX4-Autopilot
+#git submodule update --init --recursive
+#make px4_sitl jmavsim
 
 
 
