@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Change directory to ros2_ws/src
+# Change directory to ros2_ws/src 
 cd ~/ros2_ws/src
 
 # Clone the ros2_mavros repository
